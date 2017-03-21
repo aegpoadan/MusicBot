@@ -1197,7 +1197,7 @@ class MusicBot(discord.Client):
         if leftover_args[0][0] in '\'"':
             lchar = leftover_args[0][0]
             leftover_args[0] = leftover_args[0].lstrip(lchar)
-            leftover_args[-1] = [-1].rstrip(lchar)
+            leftover_args[-1] = leftover_args[-1].rstrip(lchar)
 
         search_query = '%s%s:%s' % (services[service], items_requested, ' '.join(leftover_args))
 
