@@ -1254,20 +1254,20 @@ class MusicBot(discord.Client):
                 if(playlist_size > 1):
                     reply_text = "There are only %s songs in the queue, dumbass!"
                     reply_text %= (playlist_size)
-                    return Response(reply_text)
+                   return Response(reply_text, expire_in=30)
                 elif(playlist_size == 1):
                     reply_text = "There is only %s song in the queue, dumbass!"
                     reply_text %= (playlist_size)
-                    return Response(reply_text)
+                    return Response(reply_text, expire_in=30)
                 else:
                     reply_text = "There aren't any songs in the queue, dumbass!"
-                    return Response(reply_text)
+                    return Response(reply_text, expire_in=30)
 
             entry = await player.playlist.remove_entry(index)
             reply_text = "Removed **%s** from the playlist"
             reply_text %= (entry.title)
 
-            return Response(reply_text)
+           return Response(reply_text, expire_in=30)
         except ValueError:
             reply_text = "Must specify an index to remove (AKA a number)"
 
