@@ -1271,7 +1271,7 @@ class MusicBot(discord.Client):
         except ValueError:
             reply_text = "Must specify an index to remove (AKA a number)"
 
-            return Response(reply_text, delete_after=30)
+            return Response(reply_text, expire_in=30)
 
     async def cmd_play(self, player, channel, author, permissions, leftover_args, song_url):
         """
